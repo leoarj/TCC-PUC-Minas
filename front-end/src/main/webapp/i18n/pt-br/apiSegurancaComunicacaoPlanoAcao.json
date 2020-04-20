@@ -1,0 +1,29 @@
+{
+  "front-end-app": {
+    "apiSegurancaComunicacaoPlanoAcao": {
+      "home": {
+        "title": "Cadastro de Plano de Ação",
+        "createLabel": "Criar novo Plano de Ação",
+        "createOrEditLabel": "Criar ou editar Plano de Ação",
+        "notFound": "Nenhum Plano de Ação encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir o Plano de Ação {{ id }}?"
+      },
+      "detail": {
+        "title": "Plano de Ação"
+      },
+      "tipo": "Tipo",
+      "descricao": "Descrição",
+      "classificacao": "Classificação",
+      "mensagemAlterta": "Mensagem de Alterta"
+    }
+  },
+  "api-seguranca-comunicacao-app": {
+    "apiSegurancaComunicacaoPlanoAcao": {
+      "created": "Um novo Plano de Ação foi criado com o identificador {{ param }}",
+      "updated": "Um Plano de Ação foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Plano de Ação foi excluído com o identificador {{ param }}"
+    }
+  }
+}

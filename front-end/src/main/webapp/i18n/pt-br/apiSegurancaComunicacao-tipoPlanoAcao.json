@@ -1,0 +1,9 @@
+{
+  "front-end-app": {
+    "TipoPlanoAcao": {
+      "null": "",
+      "SMS": "SMS",
+      "EMAIL": "EMAIL"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.home.title">Evento Medicaos</span>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="eventoMedicaos?.length === 0">
+        <span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.home.notFound">No eventoMedicaos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="eventoMedicaos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="identificador"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.identificador">Identificador</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sensorIdentificador"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.sensorIdentificador">Sensor Identificador</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tipo"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.tipo">Tipo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="data"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.data">Data</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="intensidade"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.intensidade">Intensidade</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let eventoMedicao of eventoMedicaos ;trackBy: trackId">
+                    <td><a [routerLink]="['/evento-medicao', eventoMedicao.id, 'view']">{{ eventoMedicao.id }}</a></td>
+                    <td>{{ eventoMedicao.identificador }}</td>
+                    <td>{{ eventoMedicao.sensorIdentificador }}</td>
+                    <td jhiTranslate="{{ 'front-end-app.TipoMedicao.' + eventoMedicao.tipo }}">{{ eventoMedicao.tipo }}</td>
+                    <td>{{ eventoMedicao.data | date:'medium' }}</td>
+                    <td>{{ eventoMedicao.intensidade }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/evento-medicao', eventoMedicao.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="eventoMedicaos?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

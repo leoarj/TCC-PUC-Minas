@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="eventoMedicao">
+            <h2><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.detail.title">Evento Medicao</span> {{ eventoMedicao.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.identificador">Identificador</span></dt>
+                <dd>
+                    <span>{{ eventoMedicao.identificador }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.sensorIdentificador">Sensor Identificador</span></dt>
+                <dd>
+                    <span>{{ eventoMedicao.sensorIdentificador }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.tipo">Tipo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'front-end-app.TipoMedicao.' + eventoMedicao.tipo }}">{{ eventoMedicao.tipo }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.data">Data</span></dt>
+                <dd>
+                    <!-- <span>{{ eventoMedicao.data }}</span> -->
+                    <span>{{ eventoMedicao.data | date:'medium' }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicao.intensidade">Intensidade</span></dt>
+                <dd>
+                    <span>{{ eventoMedicao.intensidade }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+az iot hub device-identity create --hub-name tcc-sca-puc-minas-IoT-Hub --device-id SensorTremores01
+
+az iot hub device-identity show-connection-string --hub-name tcc-sca-puc-minas-IoT-Hub --device-id SensorTremores01 --output table
+
+az iot hub show --query properties.eventHubEndpoints.events.endpoint --name tcc-sca-puc-minas-IoT-Hub
+
+az iot hub show --query properties.eventHubEndpoints.events.path --name tcc-sca-puc-minas-IoT-Hub
+
+az iot hub policy show --name service --query primaryKey --hub-name tcc-sca-puc-minas-IoT-Hub

@@ -1,0 +1,11 @@
+id;nome;capacidade_metros_cubicos;latitude;longitude;grau_risco
+1;Barragem Mina Engenho;46621;15231;74024;ALTO
+2;Barragem II Mina Engenho;44599;61992;38776;ALTO
+3;Barragem B1/B4;34264;58502;47486;BAIXO
+4;Barragem de Água do Igarapé Bahia;70038;47468;36973;ALTO
+5;Barragem de Rejeitos;30034;60684;61352;BAIXO
+6;Norte/Laranjeiras;47142;67704;80903;MEDIO
+7;BACIA DE REJEITOS 14/15;95813;7740;62150;MEDIO
+8;Barragem B1-Auxiliar - Mina Tico-Tico;14569;94944;81939;BAIXO
+9;Barragem de Água do Igarapé Bahia;9976;18856;17317;MEDIO
+10;Barragem do Mirante I e II;33372;78971;78701;MEDIO

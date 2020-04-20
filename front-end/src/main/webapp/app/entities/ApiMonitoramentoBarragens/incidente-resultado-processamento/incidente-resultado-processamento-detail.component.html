@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="incidenteResultadoProcessamento">
+            <h2><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.detail.title">Incidente Resultado Processamento</span> {{ incidenteResultadoProcessamento.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.incidenteIdentificador">Incidente Identificador</span></dt>
+                <dd>
+                    <span>{{ incidenteResultadoProcessamento.incidenteIdentificador }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.incidenteClassificacao">Incidente Classificacao</span></dt>
+                <dd>
+                    <span>{{ incidenteResultadoProcessamento.incidenteClassificacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.sucesso">Sucesso</span></dt>
+                <dd>
+                    <span>{{ incidenteResultadoProcessamento.sucesso ? 'Sim' : 'Não'}}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.data">Data</span></dt>
+                <dd>
+                    <!-- <span>{{ incidenteResultadoProcessamento.data }}</span> -->
+                    <span>{{ incidenteResultadoProcessamento.data | date:'medium' }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.mensagem">Mensagem</span></dt>
+                <dd>
+                    <span style="white-space:pre-wrap; font-style: oblique;">{{ incidenteResultadoProcessamento.mensagem }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+        </div>
+    </div>
+</div>

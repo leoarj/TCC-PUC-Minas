@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="eventoMedicaoClassificacaoAlerta">
+            <h2><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicaoClassificacaoAlerta.detail.title">Evento Medicao Classificacao Alerta</span> {{ eventoMedicaoClassificacaoAlerta.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicaoClassificacaoAlerta.tipo">Tipo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'front-end-app.TipoMedicao.' + eventoMedicaoClassificacaoAlerta.tipo }}">{{ eventoMedicaoClassificacaoAlerta.tipo }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicaoClassificacaoAlerta.intensidade">Intensidade</span></dt>
+                <dd>
+                    <span>{{ eventoMedicaoClassificacaoAlerta.intensidade }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensEventoMedicaoClassificacaoAlerta.dispararAlertas">Disparar Alertas</span></dt>
+                <dd>
+                    <!-- <span>{{ eventoMedicaoClassificacaoAlerta.dispararAlertas }}</span> -->
+                    <span>{{ eventoMedicaoClassificacaoAlerta.dispararAlertas ? 'Sim' : 'Não'}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/evento-medicao-classificacao-alerta', eventoMedicaoClassificacaoAlerta.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

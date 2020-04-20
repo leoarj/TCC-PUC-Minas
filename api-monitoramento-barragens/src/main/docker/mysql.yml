@@ -1,0 +1,16 @@
+version: '2'
+services:
+  api-monitoramento-barragens-mysql:
+    image: mysql:8.0.19
+    volumes:
+         - ~/volumes/tccsca/ApiMonitoramentoBarragens/mysql/:/var/lib/mysql/
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=l6C2RR0b3Uy1
+      - MYSQL_ALLOW_EMPTY_PASSWORD=no
+      - MYSQL_DATABASE=tccscapucminasbackendapimonitoramentobarragens
+    ports:
+      - "3307:3306"
+    expose:
+      - "3306"
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp

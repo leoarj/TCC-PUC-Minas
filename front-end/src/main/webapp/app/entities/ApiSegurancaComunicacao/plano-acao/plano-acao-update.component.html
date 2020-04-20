@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-plano-acao-heading" jhiTranslate="front-end-app.apiSegurancaComunicacaoPlanoAcao.home.createOrEditLabel">Create or edit a Plano Acao</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="front-end-app.apiSegurancaComunicacaoPlanoAcao.tipo" for="field_tipo">Tipo</label>
+                    <select class="form-control" name="tipo" formControlName="tipo" id="field_tipo">
+                        <option value="SMS">{{ 'front-end-app.TipoPlanoAcao.SMS' | translate }}</option>
+                        <option value="EMAIL">{{ 'front-end-app.TipoPlanoAcao.EMAIL' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="front-end-app.apiSegurancaComunicacaoPlanoAcao.descricao" for="field_descricao">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                           formControlName="descricao"/>
+                    <div *ngIf="editForm.get('descricao')!.invalid && (editForm.get('descricao')!.dirty || editForm.get('descricao')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descricao')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descricao')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 3 }">
+                        This field is required to be at least 3 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descricao')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 60 }">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="front-end-app.apiSegurancaComunicacaoPlanoAcao.classificacao" for="field_classificacao">Classificacao</label>
+                    <input type="number" class="form-control" name="classificacao" id="field_classificacao"
+                           formControlName="classificacao"/>
+                    <div *ngIf="editForm.get('classificacao')!.invalid && (editForm.get('classificacao')!.dirty || editForm.get('classificacao')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('classificacao')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('classificacao')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="front-end-app.apiSegurancaComunicacaoPlanoAcao.mensagemAlterta" for="field_mensagemAlterta">Mensagem Alterta</label>
+                    <input type="text" class="form-control" name="mensagemAlterta" id="field_mensagemAlterta"
+                           formControlName="mensagemAlterta"/>
+                    <div *ngIf="editForm.get('mensagemAlterta')!.invalid && (editForm.get('mensagemAlterta')!.dirty || editForm.get('mensagemAlterta')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mensagemAlterta')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mensagemAlterta')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 130 }">
+                        This field cannot be longer than 130 characters.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

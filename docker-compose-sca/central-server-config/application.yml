@@ -1,0 +1,9 @@
+#common configuration shared between all applications
+configserver:
+  name: Spring Cloud Eureka
+  status: Registered in Eureka
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:${eureka.password}@jeureka:8761/eureka/

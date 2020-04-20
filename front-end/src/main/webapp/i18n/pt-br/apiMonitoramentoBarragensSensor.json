@@ -1,0 +1,30 @@
+{
+  "front-end-app": {
+    "apiMonitoramentoBarragensSensor": {
+      "home": {
+        "title": "Cadastro de Sensores",
+        "createLabel": "Criar novo Sensor",
+        "createOrEditLabel": "Criar ou editar Sensor",
+        "notFound": "Nenhum Sensor encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir o Sensor {{ id }}?"
+      },
+      "detail": {
+        "title": "Sensor"
+      },
+      "identificador": "Identificador Único do Sensor",
+      "nome": "Nome",
+      "tipo": "Tipo",
+      "observacoes": "Observações",
+      "barragem": "Barragem"
+    }
+  },
+  "api-monitoramento-barragens-app": {
+    "apiMonitoramentoBarragensSensor": {
+      "created": "Um novo Sensor foi criado com o identificador {{ param }}",
+      "updated": "Um Sensor foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Sensor foi excluído com o identificador {{ param }}"
+    }
+  }
+}

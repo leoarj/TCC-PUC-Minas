@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="incidente">
+            <h2><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidente.detail.title">Incidente</span> {{ incidente.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidente.identificador">Identificador</span></dt>
+                <dd>
+                    <span>{{ incidente.identificador }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidente.data">Data</span></dt>
+                <dd>
+                    <!-- <span>{{ incidente.data }}</span> -->
+                    <span>{{ incidente.data | date:'medium' }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidente.classificacao">Classificacao</span></dt>
+                <dd>
+                    <span>{{ incidente.classificacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidente.barragem">Barragem</span></dt>
+                <dd>
+                    <div *ngIf="incidente.barragemId">
+                        <a [routerLink]="['/barragem', incidente.barragemId, 'view']">{{ incidente.barragemNome }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+        </div>
+    </div>
+</div>

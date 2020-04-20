@@ -1,0 +1,6 @@
+id;tipo;descricao;classificacao;mensagem_alterta
+1;SMS;Plano de Ação Nível 40 (Contenção);40;Seguir plano de contenção em andamento das áreas próximas à barragem.
+2;SMS;Plano de Ação Nível 60 (Evacuação em andamento);60;Seguir evacuação em andamento das áreas próximas à barragem.
+3;SMS;Plano de Ação Nível 80 (Evacuação imediata);80;Seguir evacuação imediata das áreas próximas à barragem.
+4;EMAIL;Plano de Ação Nível 100 (Evacuação imediata);100;Seguir evacuação imediata das áreas próximas à barragem.
+5;SMS;Plano de Ação Nível 150 (Evacuação imediata);150;Seguir evacuação imediata das áreas próximas à barragem.

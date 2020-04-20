@@ -1,0 +1,11 @@
+ <!-- Dependências com o SDK da Microsoft para integração com o Azure Hub IoT -->
+<dependency>
+  <groupId>com.microsoft.azure</groupId>
+  <artifactId>azure-eventhubs</artifactId>
+  <version>1.0.0</version>
+</dependency>
+<dependency>
+  <groupId>com.microsoft.azure</groupId>
+  <artifactId>azure-eventhubs-eph</artifactId>
+  <version>1.0.0</version>
+</dependency>

@@ -1,0 +1,16 @@
+version: '2'
+services:
+  front-end-mysql:
+    image: mysql:8.0.19
+    volumes:
+         - ~/volumes/tccsca/FrontEnd/mysql/:/var/lib/mysql/
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=71jXc8OqEt3C
+      - MYSQL_ALLOW_EMPTY_PASSWORD=no
+      - MYSQL_DATABASE=tccscapucminasfrontend
+    ports:
+      - "3309:3306"
+    expose:
+      - "3306"
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp

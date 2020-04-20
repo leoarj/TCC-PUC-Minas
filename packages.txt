@@ -1,0 +1,5 @@
+# Apenas para manter a convenção e nomenclatura entre o front e os microserviços pois cada um é um projeto separado na IDE
+pacotes=br.com.pucminas.tcc.sca
+pacotes.monitoramento=br.com.pucminas.tcc.sca.backend.api.monitoramento.barragens
+pacotes.seguranca=br.com.pucminas.tcc.sca.backend.api.seguranca.comunicacao
+pacotes.frontend=br.com.pucminas.tcc.sca.frontend

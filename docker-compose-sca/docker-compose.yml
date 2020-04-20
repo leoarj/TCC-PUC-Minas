@@ -1,0 +1,110 @@
+version: '2'
+services:
+  api-monitoramento-barragens:
+    image: api-monitoramento-barragens
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - 'SPRING_PROFILES_ACTIVE=prod,swagger'
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - 'EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${eureka.password}@eureka:8761/eureka'
+      - 'SPRING_CLOUD_CONFIG_URI=http://admin:$${eureka.password}@eureka:8761/config'
+      - 'SPRING_DATASOURCE_URL=jdbc:mysql://api-monitoramento-barragens-mysql:3306/tccscapucminasbackendapimonitoramentobarragens?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true'
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=l6C2RR0b3Uy1
+      - 'JHIPSTER_CACHE_REDIS_SERVER=redis://api-monitoramento-barragens-redis:6379'
+      - JHIPSTER_CACHE_REDIS_CLUSTER=false
+      - JHIPSTER_SLEEP=30
+      - EUREKA_PASSWORD=admin
+    ports:
+      - "8081:8081"
+    expose:
+      - "8081"
+  api-monitoramento-barragens-mysql:
+    image: 'mysql:8.0.19'
+    volumes:
+      - '~/volumes/tccsca/ApiMonitoramentoBarragens/mysql/:/var/lib/mysql/'
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=l6C2RR0b3Uy1
+      - MYSQL_ALLOW_EMPTY_PASSWORD=no
+      - MYSQL_DATABASE=tccscapucminasbackendapimonitoramentobarragens
+    ports:
+      - "3307:3306"
+    expose:
+      - "3306"
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+  api-monitoramento-barragens-redis:
+    image: 'redis:5.0.7'
+
+  api-seguranca-comunicacao:
+    image: api-seguranca-comunicacao
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - 'SPRING_PROFILES_ACTIVE=prod,swagger'
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - 'EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${eureka.password}@eureka:8761/eureka'
+      - 'SPRING_CLOUD_CONFIG_URI=http://admin:$${eureka.password}@eureka:8761/config'
+      - 'SPRING_DATASOURCE_URL=jdbc:mysql://api-seguranca-comunicacao-mysql:3306/tccscapucminasbackendapisegurancacomunicacao?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true'
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=2mAn35b7tzse
+      - 'JHIPSTER_CACHE_REDIS_SERVER=redis://api-seguranca-comunicacao-redis:6379'
+      - JHIPSTER_CACHE_REDIS_CLUSTER=false
+      - JHIPSTER_SLEEP=30
+      - EUREKA_PASSWORD=admin
+    ports:
+      - "8082:8082"
+    expose:
+      - "8082"
+  api-seguranca-comunicacao-mysql:
+    image: 'mysql:8.0.19'
+    volumes:
+      - '~/volumes/tccsca/ApiSegurancaComunicacao/mysql/:/var/lib/mysql/'
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=2mAn35b7tzse
+      - MYSQL_ALLOW_EMPTY_PASSWORD=no
+      - MYSQL_DATABASE=tccscapucminasbackendapisegurancacomunicacao
+    ports:
+      - "3308:3306"
+    expose:
+      - "3306"
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+  api-seguranca-comunicacao-redis:
+    image: 'redis:5.0.7'
+
+  front-end:
+    image: front-end
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - 'SPRING_PROFILES_ACTIVE=prod,swagger'
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - 'EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${eureka.password}@eureka:8761/eureka'
+      - 'SPRING_CLOUD_CONFIG_URI=http://admin:$${eureka.password}@eureka:8761/config'
+      - 'SPRING_DATASOURCE_URL=jdbc:mysql://front-end-mysql:3306/tccscapucminasfrontend?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true'
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=71jXc8OqEt3C
+      - JHIPSTER_SLEEP=30
+      - EUREKA_PASSWORD=admin
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+  front-end-mysql:
+    image: 'mysql:8.0.19'
+    volumes:
+      - '~/volumes/tccsca/FrontEnd/mysql/:/var/lib/mysql/'
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=71jXc8OqEt3C
+      - MYSQL_ALLOW_EMPTY_PASSWORD=no
+      - MYSQL_DATABASE=tccscapucminasfrontend
+    ports:
+      - "3309:3306"
+    expose:
+      - "3306"
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+
+  eureka:
+    extends:
+      file: eureka.yml
+      service: eureka

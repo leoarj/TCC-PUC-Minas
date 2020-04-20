@@ -1,0 +1,9 @@
+cd "C:\Users\leand\Documents\Projects\TCC-PUC-Minas\tcc-sca-puc-minas-back-end-api-monitoramento-barragens"
+./mvnw package -Pprod verify jib:dockerBuild
+
+cd "C:\Users\leand\Documents\Projects\TCC-PUC-Minas\tcc-sca-puc-minas-back-end-api-seguranca-comunicacao"
+./mvnw package -Pprod verify jib:dockerBuild
+
+cd "C:\Users\leand\Documents\Projects\TCC-PUC-Minas\tcc-sca-puc-minas-front-end"
+./mvnw package -Pprod verify jib:dockerBuild
+

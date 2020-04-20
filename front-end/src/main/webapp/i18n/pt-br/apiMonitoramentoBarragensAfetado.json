@@ -1,0 +1,30 @@
+{
+  "front-end-app": {
+    "apiMonitoramentoBarragensAfetado": {
+      "home": {
+        "title": "Cadastro de Afetados",
+        "createLabel": "Criar novo Afetado",
+        "createOrEditLabel": "Criar ou editar Afetado",
+        "notFound": "Nenhum Afetado encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir o Afetado {{ id }}?"
+      },
+      "detail": {
+        "title": "Afetado"
+      },
+      "nome": "Nome",
+      "email": "Email",
+      "telefonePrincipal": "Telefone Principal",
+      "telefoneReserva": "Telefone Reserva",
+      "barragem": "Barragem"
+    }
+  },
+  "api-monitoramento-barragens-app": {
+    "apiMonitoramentoBarragensAfetado": {
+      "created": "Um novo Afetado foi criado com o identificador {{ param }}",
+      "updated": "Um Afetado foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Afetado foi excluído com o identificador {{ param }}"
+    }
+  }
+}

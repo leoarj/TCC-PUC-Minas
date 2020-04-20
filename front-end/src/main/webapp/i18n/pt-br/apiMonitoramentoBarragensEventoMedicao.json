@@ -1,0 +1,30 @@
+{
+  "front-end-app": {
+    "apiMonitoramentoBarragensEventoMedicao": {
+      "home": {
+        "title": "Visualização de Eventos de Medição",
+        "createLabel": "Criar novo Evento de Medição",
+        "createOrEditLabel": "Criar ou editar Evento de Medição",
+        "notFound": "Nenhum Evento de Medição encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir o Evento de Medição {{ id }}?"
+      },
+      "detail": {
+        "title": "Evento de Medição"
+      },
+      "identificador": "Identificador",
+      "sensorIdentificador": "Identificador do Sensor de Origem do Evento",
+      "tipo": "Tipo",
+      "data": "Data",
+      "intensidade": "Intensidade"
+    }
+  },
+  "api-monitoramento-barragens-app": {
+    "apiMonitoramentoBarragensEventoMedicao": {
+      "created": "Um novo Evento de Medição foi criado com o identificador {{ param }}",
+      "updated": "Um Evento de Medição foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Evento de Medição foi excluído com o identificador {{ param }}"
+    }
+  }
+}

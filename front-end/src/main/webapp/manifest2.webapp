@@ -1,0 +1,31 @@
+{
+  "name": "FrontEnd",
+  "short_name": "FrontEnd",
+  "icons": [
+    {
+      "src": "./content/images/site-logo-192.png",
+      "sizes": "192x168",
+      "type": "image/png"
+    },
+    {
+      "src": "./content/images/site-logo-256.png",
+      "sizes": "256x224",
+      "type": "image/png"
+    },
+    {
+      "src": "./content/images/site-logo-384.png",
+      "sizes": "384x336",
+      "type": "image/png"
+    },
+    {
+      "src": "./content/images/site-logo-512.png",
+      "sizes": "512x448",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#e0e0e0",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -1,0 +1,29 @@
+{
+  "front-end-app": {
+    "apiMonitoramentoBarragensIncidente": {
+      "home": {
+        "title": "Visualização de Incidentes",
+        "createLabel": "Criar novo Incidente",
+        "createOrEditLabel": "Criar ou editar Incidente",
+        "notFound": "Nenhum Incidente encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir o Incidente {{ id }}?"
+      },
+      "detail": {
+        "title": "Incidente"
+      },
+      "identificador": "Identificador",
+      "data": "Data",
+      "classificacao": "Classificação",
+      "barragem": "Barragem"
+    }
+  },
+  "api-monitoramento-barragens-app": {
+    "apiMonitoramentoBarragensIncidente": {
+      "created": "Um novo Incidente foi criado com o identificador {{ param }}",
+      "updated": "Um Incidente foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Incidente foi excluído com o identificador {{ param }}"
+    }
+  }
+}

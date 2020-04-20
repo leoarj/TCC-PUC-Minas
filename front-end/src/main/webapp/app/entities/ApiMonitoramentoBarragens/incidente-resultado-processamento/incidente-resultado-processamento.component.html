@@ -1,0 +1,59 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.home.title">Incidente Resultado Processamentos</span>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="incidenteResultadoProcessamentos?.length === 0">
+        <span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.home.notFound">No incidenteResultadoProcessamentos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="incidenteResultadoProcessamentos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="incidenteIdentificador"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.incidenteIdentificador">Incidente Identificador</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="incidenteClassificacao"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.incidenteClassificacao">Incidente Classificacao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sucesso"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.sucesso">Sucesso</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="data"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.data">Data</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="mensagem"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidenteResultadoProcessamento.mensagem">Mensagem</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let incidenteResultadoProcessamento of incidenteResultadoProcessamentos ;trackBy: trackId">
+                    <td><a [routerLink]="['/incidente-resultado-processamento', incidenteResultadoProcessamento.id, 'view']">{{ incidenteResultadoProcessamento.id }}</a></td>
+                    <td>{{ incidenteResultadoProcessamento.incidenteIdentificador }}</td>
+                    <td>{{ incidenteResultadoProcessamento.incidenteClassificacao }}</td>
+                    <td>{{ incidenteResultadoProcessamento.sucesso ? 'Sim' : 'Não'}}</td>
+                    <td>{{ incidenteResultadoProcessamento.data | date:'medium' }}</td>
+                    <td>{{ incidenteResultadoProcessamento.mensagem }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/incidente-resultado-processamento', incidenteResultadoProcessamento.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="incidenteResultadoProcessamentos?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

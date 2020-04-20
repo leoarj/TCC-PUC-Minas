@@ -1,0 +1,61 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidente.home.title">Incidentes</span>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="incidentes?.length === 0">
+        <span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidente.home.notFound">No incidentes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="incidentes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="identificador"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidente.identificador">Identificador</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="data"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidente.data">Data</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="classificacao"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidente.classificacao">Classificacao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="barragemNome"><span jhiTranslate="front-end-app.apiMonitoramentoBarragensIncidente.barragem">Barragem</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let incidente of incidentes ;trackBy: trackId">
+                    <td><a [routerLink]="['/incidente', incidente.id, 'view']">{{ incidente.id }}</a></td>
+                    <td>{{ incidente.identificador }}</td>
+                    <td>{{ incidente.data | date:'medium' }}</td>
+                    <td>{{ incidente.classificacao }}</td>
+                    <td>
+                        <div *ngIf="incidente.barragemId">
+                            <a [routerLink]="['/barragem', incidente.barragemId , 'view']" >{{ incidente.barragemNome }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/incidente', incidente.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="incidentes?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

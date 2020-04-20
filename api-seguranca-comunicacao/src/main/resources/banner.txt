@@ -1,0 +1,9 @@
+████████╗ ██████╗ ██████╗              ███████╗ ██████╗ █████╗ 
+╚══██╔══╝██╔════╝██╔════╝              ██╔════╝██╔════╝██╔══██╗
+   ██║   ██║     ██║         █████╗    ███████╗██║     ███████║
+   ██║   ██║     ██║         ╚════╝    ╚════██║██║     ██╔══██║
+   ██║   ╚██████╗╚██████╗              ███████║╚██████╗██║  ██║
+   ╚═╝    ╚═════╝ ╚═════╝              ╚══════╝ ╚═════╝╚═╝  ╚═╝
+
+${AnsiColor.BRIGHT_BLUE}-- TCC SCA Puc Minas -- Executando sobre Spring Boot ${spring-boot.version} --
+-- https://hub.docker.com/repository/docker/leoarj/puc-minas-tcc-sca --${AnsiColor.DEFAULT}

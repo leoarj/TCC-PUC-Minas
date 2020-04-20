@@ -1,0 +1,4 @@
+.\mvnw clean compile -P prod,azure,no-liquibase --batch-mode
+.\mvnw test --batch-mode
+.\mvnw clean package -DskipTests -P prod,azure,no-liquibase verify --batch-mode
+az spring-cloud app deploy --resource-group tcc-sca-puc-minas-app --service tcc-sca-cloud --name api-monitoramento-barragens --jar-path target/*.jar

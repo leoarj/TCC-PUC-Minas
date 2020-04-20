@@ -1,0 +1,11 @@
+{
+  "front-end-app": {
+    "GrauRisco": {
+      "null": "",
+      "NENHUM": "NENHUM",
+      "BAIXO": "BAIXO",
+      "MEDIO": "MEDIO",
+      "ALTO": "ALTO"
+    }
+  }
+}

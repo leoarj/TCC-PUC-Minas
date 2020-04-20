@@ -1,0 +1,2 @@
+docker pull redis
+docker run -p 127.0.0.1:6379:6379/tcp --name tcc_sca-redis -d redis redis-server --appendonly yes

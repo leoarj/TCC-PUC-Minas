@@ -1,0 +1,11 @@
+{
+  "front-end-app": {
+    "TipoMedicao": {
+      "null": "",
+      "NIVEL_ARMAZENAMENTO": "NIVEL_ARMAZENAMENTO",
+      "PRESSAO": "PRESSAO",
+      "TREMORES": "TREMORES",
+      "GENERICO": "GENERICO"
+    }
+  }
+}

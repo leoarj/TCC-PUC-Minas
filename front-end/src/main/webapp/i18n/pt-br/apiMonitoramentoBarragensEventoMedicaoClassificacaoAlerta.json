@@ -1,0 +1,28 @@
+{
+  "front-end-app": {
+    "apiMonitoramentoBarragensEventoMedicaoClassificacaoAlerta": {
+      "home": {
+        "title": "Cadastro de Classificações de Alerta para Eventos de Medição",
+        "createLabel": "Criar nova Classificação de Alerta",
+        "createOrEditLabel": "Criar ou editar Classificação de Alerta",
+        "notFound": "Nenhuma Classificação de Alerta encontrada"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir a Classificação de Alerta {{ id }}?"
+      },
+      "detail": {
+        "title": "Classificação de Alerta para Eventos de Medição"
+      },
+      "tipo": "Tipo",
+      "intensidade": "Intensidade",
+      "dispararAlertas": "Disparar Alertas"
+    }
+  },
+  "api-monitoramento-barragens-app": {
+    "apiMonitoramentoBarragensEventoMedicaoClassificacaoAlerta": {
+      "created": "Uma nova Classificação de Alerta para Eventos de Medição foi criada com o identificador {{ param }}",
+      "updated": "Uma Classificação de Alerta para Eventos de Medição foi atualizada com o identificador {{ param }}",
+      "deleted": "Uma Classificação de Alerta para Eventos de Medição foi excluída com o identificador {{ param }}"
+    }
+  }
+}

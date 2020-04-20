@@ -1,0 +1,33 @@
+{
+  "front-end-app": {
+    "apiMonitoramentoBarragensBarragem": {
+      "home": {
+        "title": "Cadastro de Barragems",
+        "createLabel": "Criar nova Barragem",
+        "createOrEditLabel": "Criar ou editar Barragem",
+        "notFound": "Nenhuma Barragem encontrada"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir a Barragem {{ id }}?"
+      },
+      "detail": {
+        "title": "Barragem"
+      },
+      "nome": "Nome",
+      "capacidadeMetrosCubicos": "Capacidade em Metros Cúbicos (m³)",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "grauRisco": "Grau de Risco",
+      "sensor": "Sensor",
+      "incidente": "Incidente",
+      "afetado": "Afetado"
+    }
+  },
+  "api-monitoramento-barragens-app": {
+    "apiMonitoramentoBarragensBarragem": {
+      "created": "Uma nova Barragem foi criada com o identificador {{ param }}",
+      "updated": "Uma Barragem foi atualizada com o identificador {{ param }}",
+      "deleted": "Uma Barragem foi excluída com o identificador {{ param }}"
+    }
+  }
+}

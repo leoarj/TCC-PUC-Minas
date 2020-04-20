@@ -1,0 +1,30 @@
+{
+  "front-end-app": {
+    "apiMonitoramentoBarragensIncidenteResultadoProcessamento": {
+      "home": {
+        "title": "Visualização de Resultado de Processamento de Incidentes",
+        "createLabel": "Criar novo Resultado de Processamento de Incidentes",
+        "createOrEditLabel": "Criar ou editar Resultado de Processamento de Incidentes",
+        "notFound": "Nenhum Resultado de Processamento de Incidentes encontrado"
+      },
+      "delete": {
+        "question": "Tem certeza de que deseja excluir o Resultado de Processamento de Incidentes {{ id }}?"
+      },
+      "detail": {
+        "title": "Visualização de Resultado de Processamento de Incidentes"
+      },
+      "incidenteIdentificador": "Identificador (UUID) do Incidente de Origem",
+      "incidenteClassificacao": "Classificação do Incidente de Origem",
+      "sucesso": "Sucesso",
+      "data": "Data",
+      "mensagem": "Mensagem (Log)"
+    }
+  },
+  "api-monitoramento-barragens-app": {
+    "apiMonitoramentoBarragensIncidenteResultadoProcessamento": {
+      "created": "Um novo Resultado de Processamento de Incidentes foi criado com o identificador {{ param }}",
+      "updated": "Um Resultado de Processamento de Incidentes foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Resultado de Processamento de Incidentes foi excluído com o identificador {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+id;identificador;nome;tipo;observacoes;barragem_id
+1;bec517b7-ee25-4466-8bd9-f9462cf879f0;Sensor Analógicodo Nível de Pressão 01;PRESSAO;Sensor Analógicodo Nível de Pressão 01 - Alimentação Passivo (Piezômetro);1
+2;e6c9cb82-99f9-4bea-9c73-b7c1a98c9b6c;Sensor Digital do Nível de Armazenamento Rejeitos 01;NIVEL_ARMAZENAMENTO;Sensor Digital do Nível de Armazenamento Rejeitos 01 - Alimentação Ativo (Piezômetro elétrico);2
+3;020deb12-6c33-4198-936b-25c6431f0703;Sensor Digital de tremores/Entorno Barragem 01;TREMORES;Sensor Digital de tremores/Entorno Barragem 01 - Alimentação Ativo (Sonda inclinométrica);3
+4;d8318bbc-19a1-428f-9fba-c6cdd70c52b7;Sensor Analógico de tremores/Entorno Barragem 02;TREMORES;Sensor Analógico de tremores/Entorno Barragem 02 - Alimentação Passivo (Sonda inclinométrica);4
+5;575048d1-ec28-4c66-90b8-fd7f3709ce0b;Sensor Analógico de medição Genérico 01;GENERICO;Sensor Analógico de medição Genérico 01 - Alimentação Ativo (Piezômetro pneumático);5
+6;241d60e0-1bc6-4dbd-a462-a9c2aed7dbf0;Sensor Digital do Nível de Armazenamento Rejeitos 02;NIVEL_ARMAZENAMENTO;Sensor Digital do Nível de Armazenamento Rejeitos 02 - Alimentação Ativo ((Piezômetro elétrico));6
+7;f3ba7b02-85c5-4963-8e53-fa7f488a53c6;Sensor Digital de medição Genérico 02;GENERICO;Sensor Digital de medição Genérico 02 - Alimentação Ativo (Célula de pressão);7
+8;c5e087db-de23-4d76-84cf-bfb15bfce608;Sensor Digital de medição Genérico 03;GENERICO;Sensor Digital de medição Genérico 03 - Alimentação Ativo (Medidor de vazão);8
+9;4eb7e55b-b2a1-41fd-8e5d-4b6d85c0f210;Sensor Analógico de medição Genérico 04;GENERICO;Sensor Analógico de medição Genérico 04 - Alimentação Passivo (Marco de referência com teodolito);9
+10;8dd03afc-7622-4a4c-9832-a221e310f390;Sensor Digital de tremores/Entorno Barragem 03;TREMORES;Sensor Digital de tremores/Entorno Barragem 03 - Alimentação Passivo (Marco topográfico);10
